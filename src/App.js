@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import { useDispatch, useSelector } from "react-redux";
+import "./App.css";
+import Cart from "./features/cart/Cart";
+import Products from "./features/products/Products";
+import { useEffect } from "react";
+import { fetchCartAsync } from "./features/cart/cartSlice";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	// const dispatch = useDispatch();
+	// const carts = useSelector((state) => state.cart);
+	// useEffect(() => {
+	// 	dispatch(fetchCartAsync());
+	// 	if (carts !== null) {
+	// 		console.log("Cartsdata: " + JSON.stringify(carts));
+	// 	} else {
+	// 		console.log("cartdata is empty");
+	// 	}
+	// }, []);
+	return (
+		<div className="App">
+			<Cart></Cart>
+			<Products></Products>
+		</div>
+	);
 }
 
 export default App;
